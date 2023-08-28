@@ -12,14 +12,12 @@ function WeatherApp() {
         const resp = await fetch(APIurl);
         const respJson = await resp.json();
         setWeatherData(respJson);
-
-
     }
 
     let handleMouseOut = (e) => {
-
         fetchWeatherAPI();
     }
+
     return (
         <>
             <div className="container">
@@ -33,11 +31,10 @@ function WeatherApp() {
                         <WeatherInfo cityName={cityName} weatherData={weatherData} />
                         {/* Weather app info*/}
                     </div>
-
                 </div>
             </div>
         </>
-
     );
 }
+
 export default WeatherApp;
