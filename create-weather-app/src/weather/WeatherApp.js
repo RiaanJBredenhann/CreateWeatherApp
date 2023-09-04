@@ -7,12 +7,15 @@ function WeatherApp() {
     const changeCityInput = (e) => {
         setCityName(e.target.value);
     }
-    const fetchWeatherAPI = async () => {
-        const APIurl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units={b8162384cccff6fd63810e120acd1966}`;
+    
+    const fetchWeatherAPI = async() =>{
+        const APIkey = "e257d39b7b16933ed142ff9a1b4c93f6";
+        const APIurl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${APIkey}`;
         const resp = await fetch(APIurl);
         const respJson = await resp.json();
         setWeatherData(respJson);
-    }
+      }
+  
 
     let handleMouseOut = (e) => {
         fetchWeatherAPI();
